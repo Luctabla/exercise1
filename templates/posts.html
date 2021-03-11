@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Posts</h1>
+    {% from "includes/_formhelpers.html" import render_field %}
+    <form method="POST" action="/posts">
+        <div class="form-group">
+            {{ render_field(form.id_post, class_="form-control") }}
+        </div>
+        <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+    </form>
+    {% if post %}
+        <div>
+            <table class="table">
+                <tr>
+                    <th>User ID</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                </tr>
+                <tr>
+                    <th>{{ post.userId }}</th>
+                    <th>{{ post.id }}</th>
+                    <th>{{ post.title }}</th>
+                    <th>{{ post.body }}</th>
+                </tr>
+            </table>
+        </div>
+    {% endif %}
+{% endblock %}
