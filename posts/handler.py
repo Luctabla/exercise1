@@ -1,6 +1,7 @@
 import requests
 
-POST_URL = 'https://jsonplaceholder.typicode.com/posts/'
+POST_URL = "https://jsonplaceholder.typicode.com/posts/"
+
 
 class PostSDK:
     def get_post(self, id_post):
