@@ -1,5 +1,13 @@
 It is a web app made in flask that allows to obtain posts from a third-party API by implementing synchronous requests with requests library.
 
+
+Documentation
+=============
+
+In order to access to the Project's Documentation you can open the index.html file located in /docs/build/html/index.html..
+
+or follow the instructions below
+
 Requirements
 ************
 
@@ -11,26 +19,8 @@ Starting Project
 
 Running Server
 --------------
-.. code-block:: console
+run the following command
 
-   docker-compose up
+   ``docker-compose up``
 
-Go to the Browser ``http://localhost:8000/register`` and create an user.
-
-Structure (Endpoints)
-=====================
-
-=============================  ===========  ===========  ==============  ==============  ===========
-Endpoint                       HTTP Method  CRUD Method  Result          Authentication  Content
-                                                                         is required
-=============================  ===========  ===========  ==============  ==============  ===========
-/register/                     POST         Write        Create a new    No
-                                                         user
-/register/                     GET          Read         Register page   No
-/login/                        POST         Read         Login user      No
-/login/                        GET          Read         Login Page      No
-/members_only/                 GET          Read         List user's     Yes
-                                                         posts
-/members_only/                 POST         Read         Show post       Yes
-                                                         with $id_post
-=============================  ===========  ===========  ==============  ==============  ===========
+Go to the Browser and access to the following url ``http://localhost:8000/register`` and create an user.
