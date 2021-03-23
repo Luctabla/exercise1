@@ -115,16 +115,9 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/members_only")
+@app.route("/members_only", methods=["GET", "POST"])
 @is_logged_in
 def members_only():
-    form = PostForm(request.form)
-    return render_template("posts.html", form=form, post="")
-
-
-@app.route("/posts", methods=["GET", "POST"])
-@is_logged_in
-def posts():
     form = PostForm(request.form)
     response = ""
     if request.method == "POST" and form.validate():
@@ -136,15 +129,6 @@ def posts():
 
 POST_URL = "https://jsonplaceholder.typicode.com/posts/"
 
-
 def get_post(id_post):
     response = requests.get("{}{}".format(POST_URL, id_post))
     return response.json()
-
-
-@app.route("/sync", methods=["GET", "POST"])
-@is_logged_in
-def sync_test():
-    id_post = request.args.get("id_post")
-    response = get_post(id_post)
-    return response
