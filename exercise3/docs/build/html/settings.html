@@ -1,0 +1,185 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Requirements &#8212; Exercise1 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Exercise3’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>It is a web app made in flask that allows to obtain posts from a third-party API by implementing asynchronous requests with with asyncio and aiohttp libraries.</p>
+<div class="section" id="requirements">
+<h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Docker</li>
+<li>Docker-Compose</li>
+</ul>
+<div class="section" id="starting-project">
+<h2>Starting Project<a class="headerlink" href="#starting-project" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="running-server">
+<h3>Running Server<a class="headerlink" href="#running-server" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker-compose up</span>
+</pre></div>
+</div>
+<p>Go to the Browser <code class="docutils literal"><span class="pre">http://localhost:8000/register</span></code> and create an user.</p>
+</div>
+</div>
+<div class="section" id="structure-endpoints">
+<h2>Structure (Endpoints)<a class="headerlink" href="#structure-endpoints" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="12%" />
+<col width="12%" />
+<col width="16%" />
+<col width="16%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Endpoint</th>
+<th class="head">HTTP Method</th>
+<th class="head">CRUD Method</th>
+<th class="head">Result</th>
+<th class="head">Authentication
+is required</th>
+<th class="head">Content</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>/register/</td>
+<td>POST</td>
+<td>Write</td>
+<td>Create a new
+user</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>/register/</td>
+<td>GET</td>
+<td>Read</td>
+<td>Register page</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>/login/</td>
+<td>POST</td>
+<td>Read</td>
+<td>Login user</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>/login/</td>
+<td>GET</td>
+<td>Read</td>
+<td>Login Page</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>/members_only/</td>
+<td>GET</td>
+<td>Read</td>
+<td>List user’s
+posts</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>/members_only/</td>
+<td>POST</td>
+<td>Read</td>
+<td><p class="first">Show post</p>
+<p class="last">with $id_post</p>
+</td>
+<td>Yes</td>
+<td><dl class="first last docutils">
+<dt>{“id_post”:</dt>
+<dd>“0-50”}</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="running-client">
+<h3>Running Client<a class="headerlink" href="#running-client" title="Permalink to this headline">¶</a></h3>
+<p>In order to run the client first make sure the webapp containers are running and then run the following command</p>
+<p><code class="docutils literal"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">./client.sh</span></code></p>
+<p>then run</p>
+<p><code class="docutils literal"><span class="pre">./client.sh</span></code></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Exercise3’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Lucas Tolosa.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/settings.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

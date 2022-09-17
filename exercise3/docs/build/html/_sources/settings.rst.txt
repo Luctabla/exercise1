@@ -1,0 +1,49 @@
+It is a web app made in flask that allows to obtain posts from a third-party API by implementing asynchronous requests with with asyncio and aiohttp libraries.
+
+Requirements
+************
+
+* Docker
+* Docker-Compose
+
+Starting Project
+================
+
+Running Server
+--------------
+.. code-block:: console
+
+   docker-compose up
+
+Go to the Browser ``http://localhost:8000/register`` and create an user.
+
+Structure (Endpoints)
+=====================
+
+=============================  ===========  ===========  ==============  ==============  ===========
+Endpoint                       HTTP Method  CRUD Method  Result          Authentication  Content
+                                                                         is required
+=============================  ===========  ===========  ==============  ==============  ===========
+/register/                     POST         Write        Create a new    No
+                                                         user
+/register/                     GET          Read         Register page   No
+/login/                        POST         Read         Login user      No
+/login/                        GET          Read         Login Page      No
+/members_only/                 GET          Read         List user's     Yes
+                                                         posts
+/members_only/                 POST         Read         Show post       Yes             {"id_post":
+                                                                                            "0-50"}
+                                                         with $id_post
+=============================  ===========  ===========  ==============  ==============  ===========
+
+
+Running Client
+--------------
+
+In order to run the client first make sure the webapp containers are running and then run the following command
+
+``chmod +x ./client.sh``
+
+then run
+
+``./client.sh``
